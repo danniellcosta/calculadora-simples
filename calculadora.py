@@ -21,7 +21,7 @@ expressao = tk.StringVar()
 entry = tk.Entry(root, textvariable=expressao, font=('Poppins', 18, 'bold'), bd=10, insertwidth=4, width=14, borderwidth=4, bg="#e6e6e6", fg="black")
 entry.grid(row=0, column=0, columnspan=4, padx=10, pady=10)
 
-def create_button(text, row, col, width=5, height=2, command=None, colspan=1):
+def criar_botao(text, row, col, width=5, height=2, command=None, colspan=1):
     button = tk.Button(root, text=text, width=width, height=height, command=command, 
                        font=('Poppins', 18, 'bold'), fg='white', bg='#333333', 
                        activebackground='#666666', bd=5)
@@ -37,11 +37,11 @@ buttons = [
 
 for (text, row, col) in buttons:
     if text == 'C':
-        create_button(text, row, col, command=clear)
+        criar_botao(text, row, col, command=clear)
     else:
-        create_button(text, row, col, command=lambda b=text: press(b))
+        criar_botao(text, row, col, command=lambda b=text: press(b))
 
-create_button('=', 4, 2, width=5, height=2, command=igual, colspan=1)
+criar_botao('=', 4, 2, width=5, height=2, command=igual, colspan=1)
 
 for i in range(5):
     root.grid_rowconfigure(i, weight=1)
