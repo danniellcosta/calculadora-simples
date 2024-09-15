@@ -25,6 +25,7 @@ def criar_botao(text, row, col, width=5, height=2, command=None, colspan=1):
     button = tk.Button(root, text=text, width=width, height=height, command=command, 
                        font=('Poppins', 18, 'bold'), fg='white', bg='#333333', 
                        activebackground='#666666', bd=5)
+
     button.grid(row=row, column=col, columnspan=colspan, padx=5, pady=5, sticky="nsew")
     return button
 
